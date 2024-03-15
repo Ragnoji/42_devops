@@ -20,7 +20,7 @@ while [[ $path = "" ]]; do
  echo "Root path is empty, write the path" | log
  read path
 done
-echo "Root path is $path" | tee BashLog
+echo "Root path is $path" | log
 getent passwd | while IFS=: read -r name password uid gid gecos home shell; do
  mkdir -pm 755 "$path/$name"
  chown "$uid:$gid" "$path/$name"
